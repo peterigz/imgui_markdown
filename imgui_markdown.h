@@ -503,7 +503,16 @@ namespace ImGui
 			formatInfo.type = MarkdownFormatType::EMPHASIS;
 			mdConfig_.formatCallback(formatInfo, true);
 			const char* text = markdown_ + textStart;
-			textRegion_.RenderTextWrapped(text, text + textSize);
+            //if (formatInfo.level == 2) {
+                //assert(textSize <= 20);
+                //char button_text[20];
+                //memset(button_text, '\0', 20);
+                //memcpy(button_text, text, textSize);
+                //if (ImGui::SmallButton(button_text)) {
+                //}
+            //} else {
+                textRegion_.RenderTextWrapped(text, text + textSize);
+            //}
 		}
         else                                // render a normal paragraph chunk
         {
