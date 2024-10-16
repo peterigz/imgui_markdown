@@ -894,7 +894,7 @@ namespace ImGui
                 if( IsCharInsideWord( *endLine ) )
                 {
                     // see if we can do a better cut.
-                    float       widthNextLine = GetContentRegionMax().x;
+                    float       widthNextLine = GetContentRegionAvail().x;
                     const char* endNextLine = ImGui::GetFont()->CalcWordWrapPositionA( scale, text_, text_end_, widthNextLine );
                     if( endNextLine == text_end_ || ( endNextLine <= text_end_ && !IsCharInsideWord( *endNextLine ) ) )
                     {
